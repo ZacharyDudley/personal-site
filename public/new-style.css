@@ -10,6 +10,8 @@ body {
 }
 
 .pageBox {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -21,19 +23,19 @@ body {
 #sideMenu {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* position: absolute; */
+  flex: 0 1 20%;
 }
 
     /* SIDEBAR NAME */
 #sideMenu-name {
   cursor: pointer;
   transition: all 0.5s;
+  flex: 0 1 10%;
 }
 
 #sideMenu-name p {
   text-align: left;
-  font-size: 3em;
+  font-size: 6vh;
   line-height: 1;
 }
 
@@ -94,3 +96,47 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+/* MEDIA BREAKPOINTS */
+@media (min-width: 320px) and (max-width: 480px) {
+
+.pageBox {
+  flex-direction: column;
+}
+
+#sideMenu-nav {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#sideMenu-nav a {
+  padding: 0vh;
+  align-self: flex-start;
+}
+
+#sideMenu-nav .active {
+  font-size: 4.5vh;
+}
+
+#sideMenu-name {
+  padding: 0;
+}
+
+#sideMenu-name p {
+  font-size: 5vh;
+  text-align: center;
+}
+
+#sideMenu-name span {
+  position: relative;
+}
+
+#sideMenu-name span:after {
+  content: 'UDLEY';
+  transition: 0s;
+  position: relative;
+  opacity: 1;
+}
+
+}
+
